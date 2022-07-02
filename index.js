@@ -8,8 +8,8 @@ const { getInfo } = require('ytdl-getinfo');
 // Cors
 app.use(cors());
 
-// Listen on port 3000
-app.listen(3300, () => {
+// Listen on port 8000
+app.listen(8000, () => {
   console.log('Server running on port 3000');
 });
 
