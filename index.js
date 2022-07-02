@@ -13,6 +13,10 @@ app.listen(3300, () => {
   console.log('Server running on port 3000');
 });
 
+app.get('/', (req, res) => {
+  res.send('YTDL API');
+});
+
 // Download video
 app.get('/d', (req, res) => {
   let URL = req.query.url;
