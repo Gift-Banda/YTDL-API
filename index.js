@@ -5,16 +5,18 @@ const ytdl = require('ytdl-core');
 const app = express();
 const { getInfo } = require('ytdl-getinfo');
 
+const PORT = process.env.PORT || 8000;
+
 // Cors
 app.use(cors());
 
 // Listen on port 8000
-app.listen(8000, () => {
-  console.log('Server running on port 3000');
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 app.get('/', (req, res) => {
-  res.send('YTDL API.\n Hello World');
+  res.send('<h1>YTDL API.</h1>Hello World');
 });
 
 // Download video
