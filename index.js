@@ -14,7 +14,7 @@ app.listen(8000, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send('YTDL API');
+  res.send('YTDL API.\n Hello World');
 });
 
 // Download video
