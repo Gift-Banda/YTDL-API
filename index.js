@@ -10,11 +10,6 @@ const PORT = process.env.PORT || 8000;
 // Cors
 app.use(cors());
 
-// Listen on port 8000
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 app.get('/', (req, res) => {
   res.send('<h1>YTDL API.</h1>Hello World');
 });
@@ -36,22 +31,27 @@ app.get('/d', (req, res) => {
 
     try {
       if (QUALITY === 'highest') {
-        console.log('Downloading highest format');
+        //console.log('Downloading highest format');
         ytdl(URL, {
           format: FORMAT.toLowerCase() || 'mp4',
         }).pipe(res);
       } else {
-        console.log('Downloading custom format');
+        //console.log('Downloading custom format');
         ytdl(URL, {
           format: FORMAT.toLowerCase() || 'mp4',
           quality: QUALITY || 'highest',
         }).pipe(res);
       }
     } catch (err) {
-      console.log('There was an error, attempting to download still.');
+      //console.log('There was an error, attempting to download still.');
       ytdl(URL, {
         format: 'mp4',
       }).pipe(res);
     }
   });
+});
+
+// Listen on port 8000
+app.listen(PORT, () => {
+  //console.log(`Server running on port ${PORT}`);
 });
